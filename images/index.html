@@ -66,18 +66,26 @@
                     A Computer Science graduate majoring in <span class="accent-color">Artificial Intelligence</span> and an aspiring software engineer with a
                     solid foundation in <span class="accent-color-blue">data analysis</span>, <span class="accent-color-blue">AI Frameworks</span>, and <span class="accent-color-blue">software development</span>. Willing to learn new/old
                     technologies, proficient with English, efficient with time, and open to communication.
-                <div class="flex flex-wrap gap-3 mt-6">
-                    <button id="viewResumeBtn" class="resume-btn resume-btn--view inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="resume-btn-icon">
+                    <div class="flex flex-wrap gap-3 mt-6">
+                    <button onclick="document.getElementById('resumeModal').style.display='flex'"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer"
+                        style="background: rgba(102,126,234,0.15); border: 1px solid rgba(102,126,234,0.4); color: #a78bfa;"
+                        onmouseover="this.style.background='rgba(102,126,234,0.3)'; this.style.borderColor='rgba(102,126,234,0.7)';"
+                        onmouseout="this.style.background='rgba(102,126,234,0.15)'; this.style.borderColor='rgba(102,126,234,0.4)';">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;">
                             <path d="M12 15a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L11 11.586V3a1 1 0 112 0v8.586l2.293-2.293a1 1 0 111.414 1.414l-4 4A1 1 0 0112 15z"/>
                             <path d="M5 17a1 1 0 100 2h14a1 1 0 100-2H5z"/>
                         </svg>
                         View Resume
                     </button>
-                    <a id="downloadResumeBtn" href="Gabriel Constantine Belandres Software Engineer.pdf"
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Gabelandres/Online-Portfolio/main/Gabriel%20Constantine%20Belandres%20Software%20Engineer.pdf"
                         download="Gabriel Constantine Belandres Software Engineer.pdf"
-                        class="resume-btn resume-btn--download inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="resume-btn-icon">
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300"
+                        style="background: rgba(79,172,254,0.15); border: 1px solid rgba(79,172,254,0.4); color: #60a5fa;"
+                        onmouseover="this.style.background='rgba(79,172,254,0.3)'; this.style.borderColor='rgba(79,172,254,0.7)';"
+                        onmouseout="this.style.background='rgba(79,172,254,0.15)'; this.style.borderColor='rgba(79,172,254,0.4)';">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;">
                             <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm6.905 9.97a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72V18a.75.75 0 001.5 0v-4.19l1.72 1.72a.75.75 0 101.06-1.06l-3-3z" clip-rule="evenodd"/>
                             <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z"/>
                         </svg>
@@ -433,20 +441,5 @@
     </div>
 
     <script src="main.js" defer></script>
-
-    <!-- Resume Modal -->
-    <div id="resumeModal" class="resume-modal">
-        <div class="resume-modal__container">
-            <div class="resume-modal__header">
-                <span class="resume-modal__title">Gabriel Constantine Belandres — Resume</span>
-                <button id="resumeModalClose" class="resume-modal__close">✕</button>
-            </div>
-            <iframe
-                src="Gabriel Constantine Belandres Software Engineer.pdf"
-                class="resume-modal__iframe"
-                title="Resume">
-            </iframe>
-        </div>
-    </div>
 </body>
 </html>

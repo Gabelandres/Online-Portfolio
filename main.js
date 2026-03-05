@@ -31,7 +31,6 @@ function animateCursor() {
 
 animateCursor();
 
-// Hover effect on interactive elements
 const interactiveElements = document.querySelectorAll('a, button, .project-box, .skill-tag');
 
 interactiveElements.forEach(el => {
@@ -105,5 +104,35 @@ document.addEventListener('click', (e) => {
         document.querySelectorAll('.project-box').forEach(box => {
             box.classList.remove('active');
         });
+    }
+});
+
+// Resume Modal
+const resumeModal = document.getElementById('resumeModal');
+const viewResumeBtn = document.getElementById('viewResumeBtn');
+const resumeModalClose = document.getElementById('resumeModalClose');
+
+function openResumeModal() {
+    resumeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeResumeModal() {
+    resumeModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+viewResumeBtn.addEventListener('click', openResumeModal);
+resumeModalClose.addEventListener('click', closeResumeModal);
+
+// Close on backdrop click
+resumeModal.addEventListener('click', (e) => {
+    if (e.target === resumeModal) closeResumeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+        closeResumeModal();
     }
 });
