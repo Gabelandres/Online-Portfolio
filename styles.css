@@ -535,3 +535,35 @@ a, button, .project-box {
     width: 100%;
     border: none;
 }
+
+/* Shooting Stars */
+.shooting-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: shoot linear forwards;
+}
+
+@keyframes shoot {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(var(--angle));
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--travel-x), var(--travel-y)) rotate(var(--angle));
+    }
+}

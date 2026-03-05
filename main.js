@@ -31,6 +31,7 @@ function animateCursor() {
 
 animateCursor();
 
+// Hover effect on interactive elements
 const interactiveElements = document.querySelectorAll('a, button, .project-box, .skill-tag');
 
 interactiveElements.forEach(el => {
@@ -136,3 +137,46 @@ document.addEventListener('keydown', (e) => {
         closeResumeModal();
     }
 });
+
+// Shooting Stars
+function spawnShootingStar() {
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+
+    // Random starting position across the top 60% of the screen
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight * 0.6;
+
+    // Angle between 20–45 degrees (downward diagonal)
+    const angleDeg = 20 + Math.random() * 25;
+    const angleRad = (angleDeg * Math.PI) / 180;
+
+    // Distance the star travels
+    const distance = 150 + Math.random() * 200;
+    const travelX = Math.cos(angleRad) * distance;
+    const travelY = Math.sin(angleRad) * distance;
+
+    // Duration between 0.6s–1.2s
+    const duration = 0.6 + Math.random() * 0.6;
+
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
+    star.style.setProperty('--angle', `${angleDeg}deg`);
+    star.style.setProperty('--travel-x', `${travelX}px`);
+    star.style.setProperty('--travel-y', `${travelY}px`);
+    star.style.animationDuration = `${duration}s`;
+
+    document.body.appendChild(star);
+
+    // Remove after animation ends
+    star.addEventListener('animationend', () => star.remove());
+}
+
+function scheduleShootingStar() {
+    spawnShootingStar();
+    // Next star appears every 1.5–4 seconds
+    const nextDelay = 1500 + Math.random() * 2500;
+    setTimeout(scheduleShootingStar, nextDelay);
+}
+
+scheduleShootingStar();
