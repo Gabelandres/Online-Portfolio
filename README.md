@@ -8,8 +8,8 @@
 
 ## About Me
 
-I'm a Computer Science graduate with a focus on AI, software development, and data analysis.
-I enjoy building practical applications — from machine learning pipelines to full-stack web apps.
+I'm a Computer Science graduate with a strong foundation on AI, software development, and data analysis.
+I enjoy building practical applications — from machine learning pipelines to full-stack web apps anything is possible!
 I'm open to opportunities, collaborative, and always willing to learn.
 
 ---
