@@ -437,6 +437,63 @@
 
     <script src="main.js" defer></script>
 
+    <div class="contact-widget" id="contactWidget">
+        <div class="contact-widget__panel" id="contactPanel" aria-hidden="true">
+            <div class="contact-widget__panel-header">
+                <div>
+                    <p class="contact-widget__eyebrow">Contact Me</p>
+                    <h2 class="contact-widget__title">Let's build something together</h2>
+                </div>
+                <button
+                    type="button"
+                    class="contact-widget__close"
+                    id="contactWidgetClose"
+                    aria-label="Collapse contact form">
+                    ×
+                </button>
+            </div>
+            <p class="contact-widget__copy">
+                Send a message and your email app will open with everything ready to send.
+            </p>
+            <form class="contact-widget__form" id="contactForm">
+                <label class="contact-widget__field">
+                    <span>Your name</span>
+                    <input type="text" id="contactName" name="name" placeholder="Juan Dela Cruz" required>
+                </label>
+                <label class="contact-widget__field">
+                    <span>Your email</span>
+                    <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required>
+                </label>
+                <label class="contact-widget__field">
+                    <span>Subject</span>
+                    <input type="text" id="contactSubject" name="subject" placeholder="Project inquiry" required>
+                </label>
+                <label class="contact-widget__field">
+                    <span>Message</span>
+                    <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me a bit about your project..." required></textarea>
+                </label>
+                <button type="submit" class="contact-widget__submit">Open Email Draft</button>
+            </form>
+        </div>
+        <button
+            type="button"
+            class="contact-widget__toggle"
+            id="contactWidgetToggle"
+            aria-expanded="false"
+            aria-controls="contactPanel">
+            <span class="contact-widget__toggle-icon" aria-hidden="true">
+                <svg class="contact-widget__icon contact-widget__icon--mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                </svg>
+                <svg class="contact-widget__icon contact-widget__icon--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+                </svg>
+            </span>
+            <span class="contact-widget__toggle-label">Contact me</span>
+        </button>
+    </div>
+
     <!-- Resume Modal -->
     <div id="resumeModal" class="resume-modal">
         <div class="resume-modal__container">

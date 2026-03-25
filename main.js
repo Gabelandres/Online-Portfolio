@@ -138,6 +138,61 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Floating contact widget
+const contactWidget = document.getElementById('contactWidget');
+const contactPanel = document.getElementById('contactPanel');
+const contactWidgetToggle = document.getElementById('contactWidgetToggle');
+const contactWidgetClose = document.getElementById('contactWidgetClose');
+const contactForm = document.getElementById('contactForm');
+
+function setContactWidgetOpen(isOpen) {
+    contactWidget.classList.toggle('open', isOpen);
+    contactWidgetToggle.setAttribute('aria-expanded', String(isOpen));
+    contactPanel.setAttribute('aria-hidden', String(!isOpen));
+
+    if (isOpen) {
+        const firstField = document.getElementById('contactName');
+        setTimeout(() => firstField?.focus(), 120);
+    }
+}
+
+contactWidgetToggle.addEventListener('click', () => {
+    const isOpen = contactWidget.classList.contains('open');
+    setContactWidgetOpen(!isOpen);
+});
+
+contactWidgetClose.addEventListener('click', () => {
+    setContactWidgetOpen(false);
+});
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subject = document.getElementById('contactSubject').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    const body = [
+        `Hi Gabriel,`,
+        ``,
+        message,
+        ``,
+        `From: ${name}`,
+        `Email: ${email}`
+    ].join('\n');
+
+    const mailtoUrl = `mailto:gcbelandres08@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+});
+
+document.addEventListener('click', (event) => {
+    if (!contactWidget.classList.contains('open')) return;
+    if (!event.target.closest('#contactWidget')) {
+        setContactWidgetOpen(false);
+    }
+});
+
 // Shooting Stars
 function spawnShootingStar() {
     const star = document.createElement('div');
@@ -166,7 +221,7 @@ function spawnShootingStar() {
     star.style.setProperty('--travel-y', `${travelY}px`);
     star.style.animationDuration = `${duration}s`;
 
-    document.body.appendChild(star);
+document.body.appendChild(star);
 
     // Remove after animation ends
     star.addEventListener('animationend', () => star.remove());
@@ -180,3 +235,9 @@ function scheduleShootingStar() {
 }
 
 scheduleShootingStar();
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && contactWidget.classList.contains('open')) {
+        setContactWidgetOpen(false);
+    }
+});
