@@ -19,4 +19,4 @@ I'm open to opportunities, collaborative, and always willing to learn.
 **Languages:** Python · JavaScript · PHP · C++ · Dart · HTML · CSS  
 **Frameworks:** React · Flask · CodeIgniter · Flutter · TensorFlow · Scikit-learn  
 **Databases:** MySQL · MongoDB  
-**Tools:** Git · VS Code · Figma · Canva · AWS · Vercel  
+**Tools:** Git · VS Code · Figma · Canva · AWS · Vercel · Postman · n8n · Zapier
